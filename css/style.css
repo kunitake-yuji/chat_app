@@ -1,0 +1,567 @@
+@charset "UTF-8";
+/* 基本設定 */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+button{
+    cursor:pointer;
+}
+.pointer{
+    cursor: pointer;
+}
+:root{
+    --bg_main_color:#000;
+    --bg_base_color:rgb(108, 177, 255);
+    --header_color:black;
+
+}
+textarea,input[type="text"],input[type="password"]{
+    padding:0.5em;
+}
+.relative{
+    position: relative;
+}
+.hidden{
+    display: none;
+}
+.absolute{
+    position: absolute;
+}
+.fixed{
+    position: fixed;
+}
+.small_img{
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+}
+.cancel{
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+}
+.cancel:hover{
+    background-color: #666666;
+    color: white;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body{
+    background-color: dimgray;
+}
+#container{
+    background-color: white;
+    width: 800px;
+    height: 94vh;
+    margin: 0 auto;
+}
+table{
+    margin: 0 auto;
+}
+
+.talk_list_row:hover,.tweet_row:hover{
+    box-shadow: 4px 4px 10px rgb(102, 101, 101);
+}
+
+/* login page */
+
+#login_form{
+    position: fixed;
+    padding: 1em;
+    border: 3px double red;
+    width: fit-content;
+    height: fit-content;
+    inset: 0;
+    margin: auto;
+}
+
+/* index section */
+
+header{
+    width: 100%;
+    height: 8vh;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg_base_color);
+    color:var(--header_color);
+}
+header h1{
+    color: rgb(243, 34, 34);
+}
+#header_nav{
+    position: relative;
+}
+#header_nav #search_list{
+    position: absolute;
+    width: auto;
+    top: 105%;
+    right: 0;
+    border: 1px solid black;
+    border-radius: 5px ;
+    background-color: blanchedalmond;
+    padding: 0.5em;
+}
+
+nav{
+    position: fixed;
+    bottom: 0;
+    width: 800px;
+    height: 8vh;
+    margin: 0 auto;
+    background-color: var(--bg_base_color);
+    color: var(--header_color);
+}
+nav ul{
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul li{
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    user-select: none;
+}
+
+nav ul li img{
+    width: 24px;
+    color: white;
+}
+
+#contents{
+    height: 84vh;
+    width: 800px;
+    overflow: hidden;
+}
+#div_slider{
+    display: flex;
+    width: 2400px;
+    flex-direction: row;
+}
+#div_slider #index,
+#div_slider #talk,
+#div_slider #time_line{
+    width: 800px;
+    height: 84vh;
+    overflow-y: scroll;
+}
+#index{
+    background-color: rgb(255, 255, 255);
+}
+#talk{
+    background-color: rgb(255, 255, 255);
+}
+#time_line{
+    background-color: rgb(255, 255, 255);
+}
+.active{
+    color: rgb(252, 63, 63);
+}
+#my_friend:hover{
+    background-color: rgb(105, 105, 105);
+    color:#fff;
+}
+
+/* search section */
+#search_list{
+    color:#000;
+    z-index: 5;
+}
+#search_list .search_row form{
+    margin-left: auto;
+}
+
+#search{
+    height: 25px;
+}
+.search_row{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    min-height: 30px;
+    width: 100%;
+    padding: 0.3em;
+}
+.search_row input{
+    cursor: pointer;
+}
+.search_img{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin: 0 5px;
+}
+.search_row span{
+    line-height: 30px;
+}
+#search_list_disp{
+    margin: 0.5em 0;
+}
+
+
+
+/* my profile section */
+
+.retweet_count{
+    margin-right: 20px;
+}
+
+#my_profile{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#profile_top_area{
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my_img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.profile,#f_profile{
+    padding: 0.5em;
+}
+
+#profile_bottom_area,#f_profile_text{
+    background-color: #eee;
+    margin-bottom: 10px;
+}
+
+
+#friend_list_box{
+    background-color: white;
+    border: 3px double red;
+    width: fit-content;
+    padding: 0.5em;
+    z-index: 5;
+    color:black;
+}
+#friend_list_box div{
+    width: max-content;
+}
+#mypage_menu{
+    width: 70%;
+    margin: 5px auto;
+}
+
+#profile_form{
+    inset: 0;
+    margin: auto;
+    background-color: white;
+    border: 3px double red;
+    padding: 0.5em;
+    width: 500px;
+    height: 550px;
+}
+
+/* tweet section */
+
+#my_tweet,#f_tweet{
+    width: 90%;
+    margin: 5px auto;
+}
+#tweet_form{
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    border: 3px double red;
+    justify-content: center;
+    box-shadow: 5px 5px 5px #666666;
+}
+
+.space{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+}
+
+
+.tweet_row{
+    border: 1px dotted #333;
+    width: 95%;
+    border-radius: 5px;
+    margin: 5px auto;
+    padding: 0.5em;
+}
+
+.tweet_row>div:nth-child(3){
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
+}
+.tweet_row>div:nth-child(3) button{
+    margin-right: 10px;
+}
+
+.tweet_p{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.tweet_p_datetime{
+    margin-left: auto;
+}
+.tweet_result{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.tweet_p_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.retweet_box{
+    width: 100%;
+    margin: 5px auto;
+    border: 1px dotted #666;
+}
+.retweet_box div:last-child{
+    padding: 0.5em;
+}
+
+.retweet_up{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+}
+.retweet_up textarea{
+    width: 100%;
+}
+.retweet_up button{
+    width: 100px;
+}
+
+.retweet_flex{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.retweet_flex div:last-child{
+    margin-left: auto;
+}
+
+#talk_menu{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0.5em;
+    color: white;
+    background-color: rgb(92, 92, 92);
+}
+
+#talk_menu button{
+    width: 60px;
+    margin-right: 20px;
+}
+
+#talk_menu p{
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+#friend_select_box{
+    width: fit-content;
+    height: fit-content;
+    top:40px;
+    right: 0;
+    background-color: white;
+    border: 3px double red;
+}
+
+.friend_list_row{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    padding: 5px;
+}
+.friend_list_row button{
+    margin-left: auto;
+
+}
+.friend_list_username{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.talk_list_img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.flex{
+    background-color: white;
+    border: 3px double red;
+    border-radius: 10px;
+    padding: 0.5em;
+    width: 90%;
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* talk section */
+
+/* talk box section */
+#talk_box_header{
+    background-color: #ffffff;
+    border: 2px dotted red;
+}
+#target_user{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#target_user h4{
+    margin-left: 20px;
+}
+
+#talk_box{
+    background-color: aquamarine;
+    border: 3px double black;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 3px;
+}
+#talk_result{
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    overflow-y: scroll;
+}
+#talk_comment{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+#talk_comment button{
+    width: 80px;
+    cursor: pointer;
+}
+
+#talk_comment textarea{
+    width: 100%;
+}
+
+#talk_result{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.user_talk_result,.target_talk_result{
+    margin: 5px 0;
+    padding: 0.5em;
+    width: fit-content;
+}
+.user_talk_result{
+    margin-left: auto;
+}
+.target_talk_result{
+    margin-right: auto;
+}
+.talk_right{
+    width: fit-content;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px 10px 0 10px;
+    padding: 0.5em;
+    margin-right: 10px;
+    margin-bottom: 0.3em;
+    margin-left: auto;
+}
+.talk_left{
+    width: fit-content;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px 10px 10px 0 ;
+    padding: 0.5em;
+    margin-left: 20px;
+    margin-bottom: 0.3em;
+}
+.talk_time{
+    font-size: 8px;
+}
+.target_user{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+/* time_line */
+
+#time_line_menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em;
+    background-color: rgb(92, 92, 92);
+    color: #fff;
+}
+
+
+
+/* friend_page  */
+
+#friend_page{
+    width: 800px;
+    height: 84vh;
+    inset: 0;
+    margin: auto;
+    background-color: white;
+    z-index: 8;
+    overflow-y: scroll;
+}
+#friend_page_menu{
+    height: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+#friend_page_menu .cancel{
+    margin-right: 20px;
+}
+#friend_profile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#friend_page_top{
+    width: 80%;
+    margin: 0 auto;
+}

@@ -336,7 +336,6 @@
             $stmt -> bindValue(":text",$text);
             $stmt -> bindValue(":dt",$dt);
             $stmt -> execute();
-            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
         function retweetCount($user){
@@ -464,7 +463,7 @@
     }
 
     if(isset($_POST["retweet_text"])){
-        $dbc->retweetUpdate($_POST["tweet_no"],$_POST["retweet_text"]);
+        $dbc->retweetUpdate($_POST["tweet_no2"],$_POST["retweet_text"]);
         exit();
     }
 

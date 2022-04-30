@@ -489,13 +489,13 @@ $(function(){
             type:"POST",
             url:"dbC.php",
             data:{
-                "retweet_text":(text).val(),
-                "tweet_no":tweetNo
+                "retweet_text":$(text).val(),
+                "tweet_no2":tweetNo
             }
-        }).done(function(){
+        }).done(function(data){
             $(address).trigger("click");
-            (text).val("");
-            (text).parent().remove();
+            $(text).val("");
+            $(text).parent().remove();
         }).fail(function(){
             console.log("retweet up 失敗")
         })
